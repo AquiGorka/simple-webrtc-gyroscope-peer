@@ -29,7 +29,7 @@ class App extends Component {
     if (!parsed.s) {
       this.setState({ status: `Connecting to ${pid}` })
       peer = new Peer(config)
-      conn = peer.connect(pid)
+      const conn = peer.connect(pid)
       //
       conn.on('open', () => {
         this.setState({ status: 'Connected', conn })
